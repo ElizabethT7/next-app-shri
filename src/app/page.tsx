@@ -1,5 +1,6 @@
 import filmDetails from '@/assets/data';
-import { FilmDetails } from '@/components/film-details/FilmDetails';
+import { FilmDetails } from '@/components/film-details';
+import { Reviews } from '@/components/reviews';
 
 export default function Home() {
   return (
@@ -10,8 +11,8 @@ export default function Home() {
           genre={filmDetails.genre}
           seasonsCount={filmDetails.seasonsCount}
         />
-        <Reviews />
-        <Recomendations />
+        <Reviews reviews={filmDetails.reviews}/>
+        {/*<Recomendations />*/}
       <footer />
     </div>
   );

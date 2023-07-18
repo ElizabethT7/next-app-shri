@@ -1,3 +1,4 @@
+'use client';
 import { useCallback, useState } from 'react';
 
 export function useCount(initialValue: number = 0) {
