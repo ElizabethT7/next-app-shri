@@ -1,15 +1,10 @@
 import { FunctionComponent } from 'react';
 import { Review } from '../review';
+import { NewReviewForm } from '../new-review-form';
+import styles from './style.module.css';
 
 interface Props {
-  reviews: any[
-    /*{
-      author: string;
-      text: string;
-      rating: string;
-    }*/
-  ]
-
+  reviews: any[]
 }
 
 /*const filmRating = useMemo(() => {
@@ -34,6 +29,7 @@ export const Reviews: FunctionComponent<Props> = ({reviews}) => {
           />
         ))
       }
+      <NewReviewForm className={styles.reviewForm} />
     </div>
   )
 }

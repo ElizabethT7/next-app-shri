@@ -1,4 +1,6 @@
+import classnames from 'classnames';
 import { FunctionComponent } from 'react';
+import styles from './styles.module.css';
 
 interface Props {
   title: string;
@@ -14,11 +16,11 @@ export const FilmInfo: FunctionComponent<Props> = ({
 
   return (
     <>
-      <p>
+      <p className={`${styles.title} ${styles.active}`}>
         {title || 'Unknown Film'}
       </p>
       {Boolean(genre) && <p>{genre}</p>}
-      <p>
+      <p className={classnames(styles.title, styles.active)}>
         {seasonsCount > 0 ? `Кол-во ${seasonsCount}` : 'Нет'}
       </p>
     </>

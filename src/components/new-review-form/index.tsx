@@ -1,4 +1,8 @@
-import { useReducer } from 'react';
+import { useCallback, useEffect, useReducer, useRef } from 'react';
+
+interface Props {
+  className: string;
+}
 
 const FORM_ACTIONS = {
   setName: "setName",
@@ -7,19 +11,6 @@ const FORM_ACTIONS = {
 };
 
 const reducer = (state: any, action: any) => {
-
-  /*switch (action.type) {
-    case 'Do_SOMETHING':
-      //...
-      return {...}
-    default: 
-      return state;
-  }*/
-
-  /*const actions = {
-    type: 'Do_SOMETHING',
-    payload: {}
-  }*/
 
   switch (action.type) {
     case FORM_ACTIONS.setName:
@@ -51,20 +42,34 @@ const initialState = {
 
 
 
-export const NewReviewForm = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export const NewReviewForm = ({ className }: Props) => {
+  /*const ref: React.RefObject<HTMLInputElement> = useRef(); //{current: ...}
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.focus();
+    }
+  }, [])*/
+
+  const setFocus = useCallback(
+    (element: any) => {element.focus()},
+    []
+  ) //ф-я сработает когда элемент появится в Dom
+
+  /*const [state, dispatch] = useReducer(reducer, initialState);
 
   const onNameChange = (event: React.FocusEvent<HTMLInputElement>) => dispatch(
     {type: FORM_ACTIONS.setName, payload: {name: event.target.value}}
-  )
+  )*/
 
   return (
-    <div>
+    <div className={className}>
       <label>
         Name:
         <input
-          value={state.name}
-          onChange={onNameChange}
+          //value={state.name}
+          //onChange={onNameChange}
+          ref={setFocus}
           type='text'
          />
       </label>

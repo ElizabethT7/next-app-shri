@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 
 interface Props {
-    author: string;
-    text: string;
-    rating: string;
+  author: string;
+  text: string;
+  rating: string;
 }
 
 /*const filmRating = useMemo(() => {
