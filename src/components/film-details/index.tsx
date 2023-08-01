@@ -1,6 +1,6 @@
 'use client';
 
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useContext } from 'react';
 import { useCount } from '@/hooks/use-count';
 import { FilmInfo } from '../film-info';
 
@@ -16,6 +16,7 @@ export const FilmDetails: FunctionComponent<Props> = ({
   seasonsCount
 }) => {
   let { count, increment, decrement } = useCount(0);
+  const theme = useContext(ThemeContext); //default
 
   return (
     <div>

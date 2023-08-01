@@ -69,7 +69,7 @@ export const NewReviewForm = ({ className }: Props) => {
         <input
           //value={state.name}
           //onChange={onNameChange}
-          ref={setFocus}
+          //ref={setFocus}
           type='text'
          />
       </label>
