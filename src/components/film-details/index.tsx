@@ -16,7 +16,7 @@ export const FilmDetails: FunctionComponent<Props> = ({
   seasonsCount
 }) => {
   let { count, increment, decrement } = useCount(0);
-  const theme = useContext(ThemeContext); //default
+  const theme = useContext(ThemeContext); //dark
 
   return (
     <div>
